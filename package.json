@@ -1,0 +1,16 @@
+{
+  "name": "connecting-to-rds-via-parameter-store-config",
+  "scripts": {
+    "start": "concurrently npm:start:*",
+    "start:backend": "npm --prefix ./backend run start:dev",
+    "cleanup": "trash */node_modules",
+    "setup": "npm install && npm run install-modules",
+    "install-modules": "concurrently npm:install:*",
+    "install:backend": "npm --prefix ./backend install",
+    "install:infrastructure": "npm --prefix ./infrastructure install"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "trash-cli": "^5.0.0"
+  }
+}
